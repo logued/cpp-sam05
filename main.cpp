@@ -3,7 +3,7 @@
    Using Pointers to access arrays.
    Pointer Arithmetic - incrementing pointers and using them to access arrays.
 
-   NB:  The name of an array is a constant pointer to the first element of an array.
+   NB:  "The name of an array is a constant pointer to the first element of an array."
 */
 
 #include <iostream>
@@ -28,7 +28,8 @@ int main()
     cout << "Value at *p = " << *p << endl; // dereference the pointer p giving
     // the first element in the array.
 
-    p++;  // Increment the pointer p.  This means increase the value of the pointer
+    p++;  // Increment the pointer p.
+    // This means increase the value of the pointer
     // so that it points at the next element in the array x[].
     // When we increment a pointer it is incremented by the length of
     // the type of the object it points to.  Here, p is a pointer to int,
@@ -37,7 +38,7 @@ int main()
     // Incrementing a pointer always moves the pointer forward to the start of
     // the next element in an array.
 
-    cout << "Value stored in pointer p should be greater than it was, p = " << p << endl;
+    cout << "Value stored in pointer p should be greater (by 4) than it was, p = " << p << endl;
 
     cout << "Value at *p = " << *p << endl; // should print second element from array x[]
 
@@ -61,17 +62,27 @@ int main()
     }
 
     // The danger with pointers :
+    // The pointer p has been incremented in the for loop above, to a position
+    // just beyond the last element in the array.
+    // This memory space does not belong to the array, so we are beyond the bounds of the array.
+    // In Java, an Exception will be thrown to prevent this, but in C++
+    // no warning is given and you can access that memory by mistake.
+
     cout << "\nDanger ! Programmer error ! - pointer accessing beyond end of array. *p = ";
     cout << *p << endl;
 
-    // Even worse danger !!! What is the problem below.
-    // What happens when you execute this (assuming the for loop above was executed)
+    // Even worse danger !!!
+    // Explain happens when you execute this (assuming the for loop above was executed)
+    // and the pointer p points beyond the end of the array.
     *p = 666;
     cout << *p << endl;
+    // Above, we have written a value to a memory location that is outside the array.
+    // So, we have written a value to some arbitrary location, possibly overwriting
+    // and corrupting the contents of some other variable.
 
     //TODO
-    // Exercise - add the code for each question at the end of the question.
-    //    Compile run and test as you go. Study the output carefully to confirm
+    // Instructions - add the solutions for each question at the end of the question.
+    //    Compile run and test as you go. Study the output carefully to confirm that
     //    your work is correct.
 
     //TODO Q.1
@@ -79,17 +90,18 @@ int main()
     //    Declare a pointer "pd" and assign it to point at the beginning of the array.
     //    Write a for loop that will use the pointer to double (x2) the value of
     //    each array element.  Write a second for loop that uses a pointer to iterate
-    //    over the elements and dereference the pointer to display the new array values.
+    //    over the elements and dereference the pointer to display each new array values.
     //    add solution here...
 
     //TODO Q.2
+    //    Continuing from above....
     //    Set the pointer "pd" to point at the last element in the array d[]
     //    Display the address of the last element.
-    //    Be careful that it is pointing at the last one, and not beyond
+    //    Be careful that it is set to point at the last element, and not beyond
     //    the last element.
     //    Use a for loop, and the pointer, to print the array elements in reverse order.
     //    Hint, decrement the pointer.
 
-    system("PAUSE");  //  comment out if necessary
+    //system("PAUSE");  //  comment out if necessary
     return 0;
 }
