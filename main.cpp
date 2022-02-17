@@ -1,4 +1,4 @@
-// Pointers_and_Arrays  Feb 2022
+// Pointers_and_Arrays       sam05        February 2022
 /*
    Using Pointers to access arrays.
    Pointer Arithmetic - incrementing pointers and using them to access arrays.
@@ -57,7 +57,7 @@ int main()
 
     for (int i = 0; i < 4; i++)
     {
-        cout << *p << ", ";  // dereference pointer to access what the pointer is pointing at.
+        cout << *p << ", ";  // de-reference the pointer to access what the pointer is pointing at.
         p++;                 // (increment) move the pointer on to the next element.
     }
 
@@ -80,21 +80,19 @@ int main()
     // So, we have written a value to some arbitrary location, possibly overwriting
     // and corrupting the contents of some other variable.
 
-    //TODO
-    // Instructions - add the solutions for each question at the end of the question.
-    //    Compile run and test as you go. Study the output carefully to confirm that
-    //    your work is correct.
 
     //TODO Q.1
     //    Declare and initialize an array d[] of 5 double values.
     //    Declare a pointer "pd" and assign it to point at the beginning of the array.
-    //    Write a for loop that will use the pointer to double (x2) the value of
+    //    Write a for loop that will use the pointer to double (multiply by two) the value of
     //    each array element.  Write a second for loop that uses a pointer to iterate
-    //    over the elements and dereference the pointer to display each new array values.
+    //    over the elements and dereference the pointer to display each element.
     //    add solution here...
+
 
     //TODO Q.2
     //    Continuing from above....
+    //    Reset the pointer "pd" to point at the start of the array.
     //    Set the pointer "pd" to point at the last element in the array d[]
     //    Display the address of the last element.
     //    Be careful that it is set to point at the last element, and not beyond
