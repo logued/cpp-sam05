@@ -1,4 +1,4 @@
-// Pointers_and_Arrays       sam05        February 2023
+// Pointers_and_Arrays       sam05        February 2026
 /*
    Using Pointers to access arrays.
    Pointer Arithmetic - incrementing pointers and using them to access array elements.
@@ -13,7 +13,7 @@ int main()
 {
     int x[4] = { 10,20,30,40 };  // static array with 4 elements
 
-    int* p;    // declare p as a 'pointer to an int'
+    int* p;    // declare p as variable type 'pointer to int'
     // a pointer is variable that can store the address of an object
 
     p = x;   // Remember that the name of the array is a constant pointer to
@@ -29,7 +29,7 @@ int main()
                                             // the first element in the array.
 
     p++;  // Increment the pointer p.
-    // This means increment the value of the pointer
+    // This means increment the value in the pointer variable p
     // so that it points at the next element in the array x[].
     // When we increment a pointer it is incremented by the length of
     // the type of the object it points to.  Here, p is a pointer to int,
@@ -63,7 +63,7 @@ int main()
 
     // The danger with pointers :
     // After the above for loop finishes, the pointer p has been incremented
-    // to a position just beyond the last element in the array.
+    // to a position just BEYOND the last element in the array.
     // This memory space does not belong to the array, so we are pointing at memory
     // that is beyond the bounds of the array.
     // In Java, an Exception will be thrown to prevent this, but in C++
@@ -75,8 +75,10 @@ int main()
     // Even worse danger !!!
     // Explain happens when you execute this (assuming the for loop above was executed)
     // and the pointer p points beyond the end of the array.
+
     *p = 666;
     cout << *p << endl;
+
     // Above, we have written a value to a memory location that is outside the array.
     // So, we have written a value to some arbitrary location, possibly overwriting
     // and corrupting the contents of some other variable. This is a bad bug.
