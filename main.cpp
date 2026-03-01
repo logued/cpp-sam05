@@ -1,4 +1,4 @@
-// Pointers_and_Arrays       sam05        February 2023
+// Pointers_and_Arrays       sam05        February 2026
 /*
    Using Pointers to access arrays.
    Pointer Arithmetic - incrementing pointers and using them to access array elements.
@@ -28,14 +28,14 @@ int main()
     cout << "Value at *p = " << *p << endl; // dereference the pointer p giving
                                             // the first element in the array.
 
-    p++;  // Increment the pointer p.
+    ++p;  // Increment the pointer p.
     // This means increment the value of the pointer
     // so that it points at the next element in the array x[].
     // When we increment a pointer it is incremented by the length of
     // the type of the object it points to.  Here, p is a pointer to int,
     // so, the value 4 (assuming a 4-byte int) is actually added to
     // the address stored in the pointer. (The size of an int is 4 bytes).
-    // Incrementing a pointer always moves the pointer forward to
+    // Incrementing a pointer always 'moves the pointer forward' to
     // the next element in an array.
 
     cout << "Value stored in pointer p should be greater (by 4) than it was, p = " << p << endl;
@@ -58,7 +58,7 @@ int main()
     for (int i = 0; i < 4; i++)
     {
         cout << *p << ", ";  // de-reference the pointer to access what the pointer is pointing at.
-        p++;                 // (increment) move the pointer on to the next element.
+        ++p;                 // (increment) move the pointer on to the next element.
     }
 
     // The danger with pointers :
